@@ -213,7 +213,7 @@ const setDetailView = async (doctor) => {
     currDocObject = doctor;
     // Display Info about Doctor
     document.querySelector('#doctor').innerHTML = `
-    <h2>Name: ${doctor.name}</h2> <button class="btn" id="editButton">edit</button> <button class="btn" id="delete">delete</button>
+    <h2>Name: ${doctor.name}</h2> <button class="btn" id="editButton">edit</button> <button class="btn" id="deleteButton">delete</button>
     <p>Seasons: ${doctor.seasons}</p>
     <img src="${doctor.image_url}" />`
 
