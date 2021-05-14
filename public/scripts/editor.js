@@ -109,6 +109,7 @@ async function getDoctorCompanions(doctor) {
 // Function to show Form 
 const showDoctorForm = () => {
     console.log("Showing add Doctor Form")
+    document.getElementById('companions').innerHTML = "Selected doctor's companions go here"
     doctorListElem = document.getElementById('doctor')
     doctorListElem.innerHTML = `
     <form id="addDoctorForm">
@@ -153,29 +154,29 @@ const PostDoctorData = async ev => {
     let form_image_url = formData.get('image_url')
 
     form_seasons = form_seasons.split(',');
-    // Validate Form Data
+    // Validate Form Data, the Hard Way
     if (form_name == null || form_name == '') {
-        document.getElementById('doctor').innerHTML = `
+        document.getElementById('companions').innerHTML = `
         <h2 class="error">
             Bad Data, check name and try again
         </h2>`
     }
     else if (form_seasons == null || form_seasons == '') {
-        document.getElementById('doctor').innerHTML = `
+        document.getElementById('companions').innerHTML = `
         <h2 class='error'>
-            Bad Data, check name and try again
+            Bad Data, check seasons and try again
         </h2>`
     }
     else if (form_ordering == null || form_ordering == '') {
-         document.getElementById('doctor').innerHTML = `
+         document.getElementById('companions').innerHTML = `
         <h2 class='error'>
-            Bad Data, check name and try again
+            Bad Data, check ordering and try again
         </h2>`
     }
     else if (form_image_url == null || form_image_url == '') {
-         document.getElementById('doctor').innerHTML = `
+         document.getElementById('companions').innerHTML = `
         <h2 class='error'>
-            Bad Data, check name and try again
+            Bad Data, check image_url and try again
         </h2>`
     }
     else {
